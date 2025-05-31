@@ -1,0 +1,202 @@
+## 🧨 What the heck is a *side effect* in Python?
+
+In programming, a **side effect** is anything a function does that **affects the outside world or program state**, **besides just returning a value**.
+
+Think of it like this:
+
+> If a function returns something AND ALSO changes something outside itself...
+> 🫣 That’s a **side effect**.
+
+---
+
+## ⚠️ Common Side Effects:
+
+* Printing to the screen (`print("hi")`)
+* Writing to a file
+* Modifying a global variable
+* Changing a list or dict that was passed in
+* Sending data over the internet
+* Updating a database
+* Raising an exception
+
+---
+
+### 🤯 Example 1 — With Side Effect:
+
+```python
+my_list = [1, 2, 3]
+
+def add_item(lst):
+    lst.append(4)   # modifies the original list = side effect
+
+add_item(my_list)
+print(my_list)  # [1, 2, 3, 4] ← function changed the outside world
+```
+
+Even though the function didn’t *return* anything, it still **altered** `my_list`. That’s a side effect!
+
+---
+
+### 💅 Example 2 — No Side Effect:
+
+```python
+def add(a, b):
+    return a + b  # no side effects, just gives a new value
+
+result = add(3, 4)
+print(result)  # 7
+```
+
+No external changes. It just does math and returns it = pure, clean, innocent little function 😇
+
+---
+
+### 👻 Side Effects Can Be Dangerous!
+
+Because they’re **hidden**, they can make your code harder to understand and debug.
+
+Imagine a function that updates a database *without telling you* 🥴
+Now you're wondering:
+
+> “Why is my data all messed up!?”
+
+---
+
+## 🤓 Why it matters?
+
+In clean, functional-style programming:
+
+* **Pure functions** = no side effects
+* **Better testing, fewer bugs, more predictable**
+
+BUT side effects are sometimes **necessary** — I mean, how would you show anything on the screen without `print()`? 🤷‍♂️
+
+---
+
+### 🔁 Think of it like this:
+
+| Function Type    | What it does                                | Example                                   |
+| ---------------- | ------------------------------------------- | ----------------------------------------- |
+| Pure             | Takes input, returns output. No side stuff. | `def add(a, b): return a + b`             |
+| With Side Effect | Also touches outside world                  | `print()`, modifying a list, saving files |
+
+---
+
+## 💡 TL;DR:
+
+> **A side effect is when a function messes with something outside its own local world.**
+> It’s like farting in a room and pretending you didn’t — everyone *knows* something changed 😤💨
+
+---
+
+
+---
+
+## 🧠 WHAT IS A RETURN VALUE?
+
+A **return value** is the **thing a function gives you back** when it’s done doing its job.
+
+You call a function → it runs → it says:
+
+> “Here bro, take this!” and hands you back a value.
+
+That value is called the **return value**.
+
+---
+
+## ⚙️ In Python, it looks like this:
+
+```python
+def add(a, b):
+    return a + b
+```
+
+Now when you *call* that function:
+
+```python
+result = add(5, 3)
+print(result)  # 🔥 prints 8
+```
+
+💥 `add(5, 3)` returned `8`, and we stored it in `result`.
+
+---
+
+## 🥱 So if I don’t use `return`?
+
+Your function gives back... **nothing**. Technically, it returns `None`.
+
+```python
+def say_hi():
+    print("Hi!")
+
+x = say_hi()
+print(x)  # 👉 This will print "Hi!" and then "None"
+```
+
+Why? Because `say_hi()` didn’t *return* anything — just printed stuff = no return value = Python gives you `None` by default.
+
+---
+
+## 🧪 You can use return values like this:
+
+```python
+def square(x):
+    return x * x
+
+num = 4
+squared = square(num)
+print(squared)  # 16
+```
+
+The function **did math**, gave back the result, and let us **store** it, **use** it, **print** it, whatever.
+
+---
+
+## 🔄 `return` literally *exits* the function
+
+```python
+def wow():
+    print("I'm before return")
+    return "✨MAGIC✨"
+    print("I'm after return")  # 😶 This will NEVER run!
+```
+
+Once Python hits `return`, it’s like:
+
+> "Peace out! I'm done here. Not doing anything else!" 🏃💨
+
+---
+
+## 📦 You can even return **multiple values** (Python's cool like that):
+
+```python
+def divide(a, b):
+    return a // b, a % b  # integer division and remainder
+
+q, r = divide(10, 3)
+print(q, r)  # 3 1
+```
+
+It returns a **tuple** (group of values), and you can unpack it easily.
+
+---
+
+### 🔥 TL;DR - Return value = your function’s output gift 🎁
+
+| What You Do        | What Happens                            |
+| ------------------ | --------------------------------------- |
+| Use `return`       | Function gives back a value             |
+| Don’t use `return` | Python returns `None` by default        |
+| Store it in a var  | You can reuse the function's output     |
+| Don’t store it     | The return value is lost in the void 🌌 |
+
+---
+
+Want a dumb/fun analogy? 😏
+Calling a function is like ordering pizza 🍕
+
+* **Input** = what toppings you want
+* **Function** = the kitchen making it
+* **Return value** = the pizza they give back
+* If the kitchen says nothing and you hear silence… guess what, **you’re eating `None`** 😂

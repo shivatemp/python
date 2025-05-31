@@ -1,0 +1,80 @@
+software design principle:
+Pure functions = return value, no side effects
+Impure functions = do something external and maybe have side-effects. (like printing)
+
+### ✅ Version 1 (more modular, clearer structure):
+
+```python
+def main():
+  x = int(input("What should X be? "))
+  print("X should be:", square(x))
+
+def square(n):
+  return n * n
+
+main()
+```
+
+#### Pros:
+
+* **Clear separation of concerns**:
+
+  * `square()` does one job: squares a number.
+  * `main()` handles input and output.
+* **Reusability**: You can use `square()` anywhere else in the program.
+* **Easier to test**: `square()` can be unit tested without needing to deal with input.
+* **More conventional**: This is closer to how functions are typically used in real-world Python code.
+
+---
+
+### ⚙️ Version 2 (simpler, but less flexible):
+
+```python
+def inpt():
+  n = int(input("What should X be? "))
+  return n
+
+def main():
+  y = inpt()**2
+  print("X squared should be:", y)
+
+main()
+```
+
+#### Pros:
+
+* Slightly shorter.
+* All the logic is in `main()` or directly linked to it.
+
+#### Cons:
+
+* You're squaring the input inline, without a named function — not great for reuse or clarity.
+* The name `inpt()` is kind of misleading — `get_input()` would be clearer.
+
+---
+
+### 🏆 Best Practice?
+
+**Version 1 is better.** It's:
+
+* More readable,
+* Easier to maintain and extend (e.g., you could later add `cube(x)` or `sqrt(x)` easily),
+* Closer to how real-world code is structured.
+
+---
+
+### Bonus: A slightly improved version of Version 1
+
+```python
+def get_input():
+  return int(input("What should X be? "))
+
+def square(n):
+  return n * n
+
+def main():
+  x = get_input()
+  print("X squared should be:", square(x))
+
+main()
+```

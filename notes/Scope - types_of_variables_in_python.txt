@@ -1,0 +1,130 @@
+Definition of Global Variable in Python
+A global variable is a variable that is defined outside of all functions or classes, and it is accessible throughout the entire program, including inside functions (unless shadowed by a local variable of the same name). It exists in the global namespace and retains its value until the program ends or it's explicitly modified.
+✅ Key points:
+•	Defined at the top level (outside all functions)
+•	Can be accessed inside any function (read-only by default)
+•	To modify it inside a function, you must use the global keyword
+📌 Example:
+
+x = 10  # global variable
+
+def print_value():
+    print(x)  # access global variable
+
+print_value()  # prints: 10
+
+
+🔒 Definition of Local Variable in Python
+A local variable is a variable that is declared within a function or block, and it is only accessible within that function. It exists in the local namespace and is created when the function is called and destroyed when the function ends.
+✅ Key points:
+•	Defined inside a function or block
+•	Exists only during the execution of that function
+•	Not accessible from outside the function
+•	Takes precedence over a global variable with the same name
+📌 Example:
+
+def greet():
+    name = "Ram"  # local variable
+    print("Hello", name)
+
+greet()  # prints: Hello Ram
+# print(name)  # ← this would cause an error: name is not defined
+
+
+👀 Quick Bonus Tip
+If you're in a function and you're like:
+
+x = 5
+
+def change():
+    x = 10  # this is a local variable!
+    print(x)
+
+change()
+print(x)
+
+You'll get:
+10
+5
+
+Because the function made its own local x and left the global one untouched 😎
+
+
+
+If the name of local and global variable is same:
+
+def shout(name):
+    name = name.upper()   # local reassignment
+    print("inside function:", name)
+
+name = "sita"             # global variable
+
+shout(name)               # passes 'sita' to function
+print("outside function:", name)
+
+What happens here?
+Global name = "sita"
+
+shout(name) passes the value "sita" into the function
+
+Inside the function:
+
+A local variable name is created
+
+It’s changed to "SITA" and printed
+
+When the function ends, local name is deleted
+
+Global name is still "sita"
+
+🔍 Output:
+inside function: SITA
+outside function: sita
+💥 BOOM! Confirmed: local and global are different beasts, even if they share the same name 🐍
+
+Python has a set of local variables which can also be a parameter if we talk of a cuustom function, and then it also has global variables but what actually happens when i name both the same is that, python just takes the global variable 'return value' and then reassigning it to the local variable as an argument and then the custom funntction runs and prints the value contained inside the local variable.
+
+
+💥 WHAT IS "SCOPE" IN PYTHON?
+Scope = "Where a variable lives and who can see it."
+It decides which parts of your code can access which variables.
+If you try to access a variable outside of its scope, Python goes:
+“WHO? Never heard of it 😤”
+And slaps you with a NameError.
+
+
+🧠 The 4 Types of Scope in Python (LEGB Rule)
+Yup, Python actually uses something called the LEGB Rule to decide where to look for variables.
+Here’s what it means:
+Scope Type	Name	Description
+L	Local	Inside the current function (your first stop)
+E	Enclosing	Any outer functions if you're inside a nested function
+G	Global	Variables defined at the top level (outside functions)
+B	Built-in	Default Python stuff like print(), len(), etc.
+
+
+🔍 Let's See These in Action
+x = "global"  # Global Scope
+
+def outer():
+    x = "enclosing"  # Enclosing Scope
+    
+    def inner():
+        x = "local"  # Local Scope
+        print(x)     # Will print "local"
+    
+    inner()
+
+outer()
+print(x)  # Will print "global"
+
+• inner() prints local → because local wins 🏆
+• Outside the function, x is still global
+
+
+Python checks scope like this:
+1.	Local 👀
+2.	Enclosing 👀👀
+3.	Global 👀👀👀
+4.	Built-in 👀👀👀👀
+It stops as soon as it finds the name.

@@ -1,0 +1,32 @@
+nesting is that the inner most function's output/return value becomes argument for the outer function.
+
+Statements are the big building blocks in Python. Think if, for, while, and yep, = assignment. They stand alone on their own line (or joined with semicolons), and they don’t produce a “value” you can use inline.
+
+Expressions are things that do evaluate to a value: literals (42), arithmetic (3 + 4), function calls (print("hi")), even the new walrus ((n := len(a))). They fit inside other expressions or statements.
+
+1. Python’s Two‑Phase Read‑and‑Execute
+Phase 1: Parsing.
+Python reads your whole line of code and builds a little map (an Abstract Syntax Tree, or AST). It decides: “Oookay, this is a function call, these are the arguments, here’s an assignment statement… oh wait, no, wrong shape!” If it sees x = input(...) inside print(...), it says “That’s not valid syntax,” because in the grammar it expects either:
+
+A keyword argument like sep=","
+
+Or a plain expression like input(...)
+but definitely not an assignment statement.
+
+Phase 2: Executing.
+Only after it’s sure your code parses does it start running it, top to bottom. By then it’s already decided where every assignment belongs—at the top level of a statement, not nested inside a function call.
+
+Because you blew the grammar rules in Phase 1, it never even gets to Phase 2 to “solve the equation.” 🚫
+
+3. Expression vs Statement: The Rule of Separation
+Statements (like x = …, if …:, for … in …:) are top‑level. They tell the interpreter “do this action.”
+
+Expressions (like 3 + 4, foo(bar), (n := len(a))) produce a value that gets plugged into something else.
+
+You can’t jam a statement where only expressions belong. It’s like trying to put a whole paragraph inside a single word slot of a sentence. 🤷‍♀️
+
+So here’s the magic and the curse of Python:
+It’s dynamically typed — which means:
+👉 you don’t have to tell it what type the input is.
+👉 But it also won’t stop you from doing dumb stuff until it breaks. 😅
+
