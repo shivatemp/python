@@ -1,0 +1,93 @@
+---
+
+### 🚀 How to Set Up a New Folder for Git to Track (from scratch):
+
+Let’s say you want to make a new Python project called `weather-wizard`:
+
+#### 🧱 Step 1: Go to your WSL projects folder
+
+```bash
+cd ~/projects
+```
+
+If that `projects` folder doesn't exist yet:
+
+```bash
+mkdir ~/projects && cd ~/projects
+```
+
+#### 📁 Step 2: Create your new project folder
+
+```bash
+mkdir weather-wizard
+cd weather-wizard
+```
+
+#### 📝 Step 3: Add a Python file or something
+
+```bash
+touch main.py
+echo "# Weather Wizard" > README.md
+```
+
+#### 🧙‍♂️ Step 4: Initialize Git
+
+This tells Git, “Hey yo, start tracking this folder.”
+
+```bash
+git init
+```
+
+You’ll see:
+
+```bash
+Initialized empty Git repository in /home/you/projects/weather-wizard/.git/
+```
+
+#### ✅ Step 5: Stage and commit the initial files
+
+```bash
+git add .
+git commit -m "Initial commit: Weather Wizard setup"
+```
+
+#### 🌐 Step 6: Connect to a GitHub repo
+
+Go to GitHub and create a **new empty repo** (don’t add a README there).
+
+Then back in terminal:
+
+```bash
+git remote add origin git@github.com:yourusername/weather-wizard.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+### 🧪 Quick Check
+
+You can confirm it’s working by doing:
+
+```bash
+git status
+```
+
+It should say something like:
+
+```bash
+On branch main
+nothing to commit, working tree clean
+```
+
+And then if you open GitHub, boom 💥 — project is there!
+
+---
+
+### 🛠 TL;DR One-Liner Style (if you know what you're doing):
+
+```bash
+mkdir new-project && cd new-project && git init && touch main.py && echo "# New Project" > README.md && git add . && git commit -m "init" && git remote add origin git@github.com:you/your-repo.git && git branch -M main && git push -u origin main
+```
+
+---
