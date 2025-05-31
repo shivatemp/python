@@ -51,3 +51,13 @@
 | 23  |git config core.autocrlf true | If true, avoids line ending conflicts in unix and windows and vice-versa                         |
 | 24  |pwd                           | To see your current working directory                                                            |
 | 25  |mkdir -p parent/child1/       | Creates all parent directories as needed doesn’t error out if some directories already exist     |
+| --- | ---------------------------- | ------------------------------------------------------------------------------------------------ |
+| 1   | `uname -a`                          | Shows all system info like kernel, architecture, etc.                                     |
+| 2   | `lsb_release -a`                    | Displays detailed Linux distro info.                                                      |
+| 3   | `Remote: Close Remote Connection`   | Closes active VS Code remote session (like SSH/WSL).                                      |
+| 4   | `WSL: Connect to WSL in New Window` | Opens a new VS Code window linked to your WSL instance.                                   |
+| 5   | `git pull`                          | Fetches and merges latest changes from remote repo.                                       |
+| 6   | `git pull --rebase`                 | Fetches changes then rebases your local commits on top.                                   |
+| 7   | `git status`                        | Shows what’s going on in your Git repo (staged, modified, untracked files).               |
+| 8   | `git fetch`                         | Just grabs updates from remote, doesn’t merge anything.                                   |
+| 9   | `code .`                            | Opens the current folder in VS Code.                                                      |
