@@ -1,0 +1,199 @@
+---
+
+## 🎭 First: Is there more than one Visual Studio Code?
+
+**NOPE.** There is **only one** actual **VS Code app installed on your system** — the Windows one.
+
+That thing you installed from the `.exe` file or the Microsoft Store?
+
+💡 **That’s the only real VS Code binary.**
+There’s no separate “Ubuntu” version of VS Code. There’s no secret Linux VS Code hiding in your WSL.
+
+---
+
+## 🔌 So what’s happening with this WSL magic?
+
+When you open VS Code inside WSL — like with:
+
+```bash
+code .
+```
+
+or if you click on a folder in the **WSL terminal inside Windows Terminal**...
+
+VS Code does this voodoo:
+
+> The **Windows VS Code** app runs as usual...
+> But it **installs a tiny "VS Code Server" inside Ubuntu** in the background
+> So your editor talks to your Linux file system **remotely through that tunnel**
+
+That’s how it opens `/home/you/project` without freaking out. It’s like VS Code’s Remote WSL plugin becomes a **middleman**.
+
+---
+
+## 🧠 How to know what’s running when?
+
+| How you open VS Code                           | What’s happening                                                                |
+| ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| You open it from Start Menu                    | Normal Windows VS Code opens — and defaults to last used context                |
+| You run `code .` inside WSL                    | Windows VS Code opens in "Remote WSL" mode — connected to Linux                 |
+| You click "Open Folder" in VS Code             | Depends — it might reopen the last folder, WSL or Windows, depending on context |
+| You see “WSL: Ubuntu” in bottom-left green bar | You’re inside a Remote WSL session (talking to Linux)                           |
+| You see nothing or "No Folder Opened"          | You’re in normal Windows mode                                                   |
+
+---
+
+## 🧪 Test this like a boss:
+
+1. Open VS Code from Start menu
+2. Look in the **bottom-left**:
+
+   * If it says **“WSL: Ubuntu”** — it’s running in Remote WSL mode
+   * If it says nothing, or your normal Windows path like `C:\Users\You\Projects` — it’s Windows mode
+3. Press `Ctrl+Shift+P`, type:
+
+   ```
+   Remote: Close Remote Connection
+   ```
+
+   And boom — you’re back to pure Windows VS Code
+
+---
+
+## 🔍 TL;DR (No cap):
+
+| Thing                                        | Truth                                                                   |
+| -------------------------------------------- | ----------------------------------------------------------------------- |
+| “Do I have two versions of VS Code?”         | ❌ Nope. Only one Windows app                                            |
+| “Why does it open WSL even from Start menu?” | It reopens the last session — if you last used WSL, it defaults to that |
+| “Is there a separate VS Code on Linux?”      | Nope. Just a small VS Code **server** living in your WSL’s file system  |
+| “How do I get back to Windows VS Code?”      | Run `Remote: Close Remote Connection` or open a folder on `C:` drive    |
+
+---
+
+### 💬 Wanna go full Zen with this?
+
+Create two shortcuts:
+
+* One that opens `code` in Windows mode (`"C:\Users\You\Projects"`)
+* One that opens VS Code in WSL directly (by running `code .` inside WSL)
+
+Boom. Control freak mode achieved. 🎛️😎
+
+---
+
+################################################################################################################################################
+
+---
+
+## 🧠 What’s Happening Right Now (based on what you said):
+
+* ✅ You opened VS Code from the **Start Menu**
+* ❗ But it **auto-connected to WSL (Ubuntu)** — you see it in:
+
+  * Bottom-left green label: `WSL: Ubuntu`
+  * Python interpreter: `Python (WSL)`
+  * Command palette: all WSL mode commands
+
+So even though you didn’t do `code .` — VS Code remembered your **last session** was WSL.
+And it just **picked up where you left off.**
+
+🧠 *VS Code is sticky like that — it doesn’t care how you open it. It cares what you opened last.*
+
+---
+
+## 🤯 So now your question is:
+
+> "How do I switch back to **normal Windows VS Code**, and will doing that screw up my WSL?"
+
+---
+
+### 💥 Answer #1: How to get back to **normal Windows VS Code**
+
+1. **Press `Ctrl+Shift+P` to open Command Palette**
+2. Type:
+
+   ```
+   Remote: Close Remote Connection
+   ```
+3. Hit Enter ✅
+
+💣 That instantly kicks you out of the WSL tunnel, and now you’re back in regular Windows mode.
+
+You’ll know because:
+
+* Bottom-left will no longer say `WSL: Ubuntu`
+* Python interpreter won’t be from Linux
+* File paths will look like `C:\Users\You\Something`
+
+---
+
+### 💥 Answer #2: Will this break anything?
+
+**HELL NO.** 🚫
+
+Closing the WSL connection in VS Code:
+
+* ❌ Does NOT shut down your Linux
+* ❌ Does NOT uninstall WSL or Ubuntu
+* ❌ Does NOT delete files
+* ✅ Just stops the *current VS Code window* from being connected to WSL
+
+It’s like unplugging from a cloud server — the server is still there, it’s just idle.
+
+---
+
+### 💥 Answer #3: How to go back **into** WSL mode later?
+
+A few ways:
+
+#### Method 1: From Terminal
+
+```bash
+wsl
+cd to your project folder
+code .
+```
+
+This will launch VS Code **and automatically connect to WSL**
+
+#### Method 2: From VS Code Itself
+
+1. `Ctrl+Shift+P`
+2. Type:
+
+   ```
+   Remote-WSL: New Window
+   ```
+3. Pick Ubuntu (or your distro)
+4. Done 🎯
+
+---
+
+### 🧙 Summary of Your Powers Now:
+
+| Action                                   | Result                                           |
+| ---------------------------------------- | ------------------------------------------------ |
+| Open VS Code from Start Menu             | Reopens *last context* (could be WSL or Windows) |
+| `Ctrl+Shift+P → Close Remote Connection` | Exit WSL mode and go back to local Windows files |
+| `Ctrl+Shift+P → Remote-WSL: New Window`  | Launches VS Code inside Ubuntu WSL again         |
+| `code .` from Ubuntu terminal            | Same thing — launches VS Code inside WSL         |
+
+---
+
+### 💡 BONUS TIP: Force it to always open local by default
+
+You can edit VS Code settings so it **doesn't auto-connect to WSL** every time you launch.
+
+1. Open VS Code → Press `Ctrl + ,`
+2. Search for:
+
+   ```
+   remote.autoConnect
+   ```
+3. Set it to `false`
+
+Boom. No more surprise WSL sessions.
+You’re in full control now, boss 👑
+
+---

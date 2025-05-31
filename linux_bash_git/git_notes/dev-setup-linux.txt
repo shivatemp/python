@@ -1,0 +1,193 @@
+ok so just refreshing our plan:
+---
+
+# 🧠 OVERALL OBJECTIVE:
+
+> 🎯 **Set up a professional, WSL-powered Python + Git + VS Code environment on a clean Windows 11 system with robust GitHub integration using SSH over port 443 — ready for cloud/DevOps learning and development.**
+
+---
+
+# ✅ PHASE 1: Install Core Tools on Windows
+
+### 🎯 Objective:
+
+> Get all essential developer tools installed on your Windows 11 machine — the stuff needed before we go into the Linux side (WSL).
+
+### 📋 Checklist:
+
+* [ ] Install **Windows Terminal** from Microsoft Store
+  → We’ll use this instead of boring old CMD/PowerShell
+* [ ] Install **VS Code**
+  → Check “Add to PATH” and context menu options during install
+* [ ] Install **Python for Windows**
+  → Just for VS Code to behave; WSL will get its own Python
+  → MUST check “Add Python to PATH”
+* [ ] Install **Git for Windows**
+  → Choose VS Code as editor
+  → Select “Git from command line and 3rd-party software”
+* [ ] Install **WSL + Ubuntu**
+  → Run `wsl --install` in PowerShell (Admin)
+  → Restart after install, then complete Ubuntu setup (username + password)
+* [ ] Install these VS Code Extensions:
+
+  * [ ] Python (by Microsoft)
+  * [ ] Remote - WSL
+  * [ ] GitLens
+  * [ ] GitHub Pull Requests & Issues
+
+### ✅ Completion Test:
+
+* [ ] You can open **Ubuntu via Windows Terminal**
+* [ ] You can run `code .` inside Ubuntu and it opens VS Code
+* [ ] `python --version` and `git --version` both work in CMD and in Ubuntu
+
+---
+
+# ✅ PHASE 2: Set Up WSL Dev Environment (Linux side)
+
+### 🎯 Objective:
+
+> Make WSL (Ubuntu) your primary dev environment — install Python, Git, generate SSH keys, and configure GitHub access over port 443.
+
+### 📋 Checklist:
+
+* [ ] Open Ubuntu (WSL) from Windows Terminal
+
+* [ ] Run full system update:
+
+  ```bash
+  sudo apt update && sudo apt upgrade -y
+  ```
+
+* [ ] Install **Python + pip** inside WSL:
+
+  ```bash
+  sudo apt install python3 python3-pip -y
+  ```
+
+* [ ] Install **Git** inside WSL:
+
+  ```bash
+  sudo apt install git -y
+  ```
+
+* [ ] Set global Git config:
+
+  ```bash
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+  ```
+
+* [ ] Generate SSH key:
+
+  ```bash
+  ssh-keygen -t ed25519 -C "you@example.com"
+  ```
+
+  * Just press Enter through all prompts
+
+* [ ] Create or edit SSH config:
+
+  ```bash
+  nano ~/.ssh/config
+  ```
+
+  Paste this in:
+
+  ```
+  Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+  ```
+
+  Save & close (`Ctrl+O`, `Enter`, then `Ctrl+X`)
+
+* [ ] Copy SSH public key:
+
+  ```bash
+  cat ~/.ssh/id_ed25519.pub
+  ```
+
+* [ ] Add it to GitHub:
+  → GitHub > Settings > SSH and GPG Keys > New SSH Key
+  → Paste the key, give it a name (e.g. “WSL Ubuntu Key”)
+
+* [ ] Test SSH connection:
+
+  ```bash
+  ssh -T git@github.com
+  ```
+
+  → You should see: **“Hi your-username! You’ve successfully authenticated…”**
+
+---
+
+# ✅ PHASE 3: GitHub + VS Code Dev Workflow
+
+### 🎯 Objective:
+
+> Use VS Code + WSL to build and push Python projects using Git and GitHub, with clean file management and proper workflows.
+
+### 📋 Checklist:
+
+* [ ] Open VS Code with **Remote - WSL** (Command Palette → "Remote-WSL: New Window")
+* [ ] Inside VS Code terminal (in WSL), navigate to your dev folder:
+
+  ```bash
+  cd ~
+  mkdir projects
+  cd projects
+  ```
+* [ ] Create a new Python project:
+
+  ```bash
+  mkdir my-first-python
+  cd my-first-python
+  touch main.py
+  ```
+* [ ] Initialize Git:
+
+  ```bash
+  git init
+  ```
+* [ ] Create a README and commit:
+
+  ```bash
+  touch README.md
+  git add .
+  git commit -m "Initial commit"
+  ```
+* [ ] Create an empty repo on GitHub (don’t initialize with README)
+* [ ] Add GitHub remote:
+
+  ```bash
+  git remote add origin git@github.com:yourusername/your-repo-name.git
+  git branch -M main
+  git push -u origin main
+  ```
+* [ ] Confirm project appears on GitHub
+
+---
+
+## 🏁 ONCE ALL 3 PHASES ARE COMPLETE:
+
+🎉 You now have:
+
+* A full Linux dev environment
+* Clean Python + Git + VS Code setup
+* Reliable SSH-based GitHub access (that works even on locked-down Wi-Fi)
+* A workflow that mirrors **how real developers and cloud engineers work**
+
+From here, you’re ready to:
+
+* Start building Python projects
+* Learn AWS CLI, Docker, Terraform, etc.
+* Conquer the DevOps world one commit at a time 🚀
+
+---
+
+so i have installed till vs code, python and git and i have installed wsl through powershell and i have installed ubuntu through microsoft store thats it nothing else
+
+
+

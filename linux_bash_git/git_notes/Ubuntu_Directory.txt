@@ -1,0 +1,2 @@
+My Ubuntu Machine Location:
+\\wsl.localhost\Ubuntu-22.04\home\shiva\projects\python
