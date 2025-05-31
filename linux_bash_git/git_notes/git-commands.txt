@@ -1,27 +1,27 @@
-| No. | Command                                                                | Description                                |
-| --- | ---------------------------------------------------------------------- | ------------------------------------------ |
-| 1   | `cd ~/projects`                                                        | Go to your WSL `projects` folder.          |
-| 2   | `mkdir ~/projects`                                                     | Create the folder if it doesn't exist.     |
-| 3   | `mkdir weather-wizard`(Random name)                                    | Make a new folder for your project.        |
-| 4   | `cd weather-wizard`                                                    | Move into that project folder.             |
-| 5   | `touch main.py`                                                        | Create an empty Python file.               |
-| 6   | `echo "# Weather Wizard" > README.md`                                  | Make a simple README file.                 |
-| 7   | `git init`                                                             | Initialize Git in this folder.             |
-| 8   | `git add .`                                                            | Stage all files for Git.                   |
-| 9   | `git commit -m "Initial commit: Weather Wizard setup"`                 | Save a commit with a message.              |
-| 10  | `git remote add origin git@github.com:your_git_username/repo_name.git` | Link local folder to your GitHub repo.     |
-| 11  | `git branch -M main`                                                   | Rename the branch to `main`.               |
-| 12  | `git push -u origin main`                                              | Push everything to GitHub.                 |
-| 13  | `git status`                                                           | See what's going on in Git (status check). |
-
-| --- | ----------------------------------------- | ----------------------------------------------------------------------- |
-
-| 14  | `git fetch`                  | Pulls down any changes from the remote repo (like updates to branches). |
-| 15  | `git status`                 | Shows what’s changed, what’s staged, and what’s untracked.              |
-| 16  | #Comment                     | This is a comment after a "#" symbol.                                   |
-| 17  | `git add .`                  | Stage all changed/added files for commit.                               |
-| 18  | `git commit -m "my updates"` | Save those changes with a message describing what you did.              |
-| 19  | `git push`                   | Send your changes to GitHub.                                            |
-| 20  | `wsl`                        | Open the Ubuntu terminal from Windows (if not already inside).          |
-| 21  | `cd ~/projects/python`       | Navigate to your Python project inside WSL.                             |
-| 22  | `code .`                     | Open current folder in VS Code (using Remote - WSL magic).              |
+| No. | Command                                                                | Description                                            |
+| --- | ---------------------------------------------------------------------- | ------------------------------------------------------ |
+| 1   | `cd ~/projects`                                                        | Go to your WSL `projects` folder.                      |
+| 2   | `mkdir ~/projects`                                                     | Create the folder if it doesn't exist.                 |
+| 3   | `mkdir weather-wizard`(Random name)                                    | Make a new folder for your project.                    |
+| 4   | `cd weather-wizard`                                                    | Move into that project folder.                         |
+| 5   | `touch main.py`                                                        | Create an empty Python file.                           |
+| 6   | `echo "# Weather Wizard" > README.md`                                  | Make a simple README file.                             |
+| 7   | `git init`                                                             | Initialize Git in this folder.                         |
+| 8   | `git add .`                                                            | Stage all files for Git.                               |
+| 9   | `git commit -m "Initial commit: Weather Wizard setup"`                 | Save a commit with a message.                          |
+| 10  | `git remote add origin git@github.com:your_git_username/repo_name.git` | Link local folder to your GitHub repo.                 |
+| 11  | `git branch -M main`                                                   | Rename the branch to `main`.                           |
+| 12  | `git push -u origin main`                                              | Push everything to GitHub.                             |
+| 13  | `git status`                                                           | See what's going on in Git (status check).             |
+| --- | ---------------------------------------------------------------------- | ------------------------------------------------------ |
+| 14  | `git fetch`                  | Pulls down any changes from the remote repo (like updates to branches).                          |
+| 15  | `git status`                 | Shows what’s changed, what’s staged, and what’s untracked.                                       |
+| 16  | #Comment                     | This is a comment after a "#" symbol.                                                            |
+| 17  | `git add .`                  | Stage all changed/added files for commit.                                                        |
+| 18  | `git commit -m "my updates"` | Save those changes with a message describing what you did.                                       |
+| 19  | `git push`                   | Send your changes to GitHub.                                                                     |
+| 20  | `wsl`                        | Open the Ubuntu terminal from Windows (if not already inside).                                   |
+| 21  | `cd ~/projects/python`       | Navigate to your Python project inside WSL.                                                      |
+| 22  | `code .`                     | Open current folder in VS Code (using Remote - WSL magic).                                       |
+| 23  | `command_1 && command_2`     | executes multiple commands in sequence only if the previous command executes successfully        |
+| 24  | `command_1 ; command_2`      | executes multiple commands in sequence even if the previous command fails to execute successfully|
