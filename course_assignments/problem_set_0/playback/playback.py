@@ -1,3 +1,8 @@
+# Playback Speed
+# Prompts the user for input and prints it with each space replaced by '...'.
+# Simulates slowing down speech by adding pauses between words.
+#----------------------------------------------------------------------------------------
+
 #The return value from input function is assigned to and stored in fetchUserInput variable.
 fetchUserInput = input("Please input here. ")
 

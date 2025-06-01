@@ -1,3 +1,8 @@
+# Making Faces
+# Defines a convert function that replaces :) with 🙂 and :( with 🙁 in user input.
+# The main function prompts the user, calls 'convert()', and prints the result.
+#----------------------------------------------------------------------------------------
+
 #convert() function processes the argument from the user input in the main() function.
 #It gets that through the parameter fetchUserInput.
 #-------------#
