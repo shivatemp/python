@@ -1,3 +1,8 @@
+#Einstein
+#Prompts the user for mass in kilograms and calculates equivalent energy in Joules.
+#Uses the formula E = mc² with c = 300000000 m/s.
+#----------------------------------------------------------------------------------------
+
 #Declaring the speed of light and storing it into a variable, 'light_c'.
 light_c = 300000000
 
