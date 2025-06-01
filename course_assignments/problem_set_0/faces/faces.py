@@ -23,3 +23,10 @@ def main():
 
 #The main() function is called.
 main()
+
+'''
+str.replace(old, new, count=-1)
+Return a copy of the string with all occurrences of substring old replaced by new. If count is given, only the first count occurrences are replaced. If count is not specified or -1, then all occurrences are replaced.
+
+Changed in version 3.13: count is now supported as a keyword argument.
+'''
