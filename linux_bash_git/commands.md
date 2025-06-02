@@ -68,3 +68,29 @@
 | 5   | `code .`                            | Opens the current folder in VS Code.                    |
 | 6   | `wsl`                               | Open Ubuntu.                                            |
 | 7   | `#Comment`                          | This is a comment after a "#" symbol.                   |
+
+#_____________________________________________________
+# Understanding `.` and `..` in Paths
+
+| Command      | Meaning                         | Effect / Explanation                                         | Example `pwd` Output      |
+|--------------|---------------------------------|-------------------------------------------------------------|--------------------------|
+| `cd ./`      | Change directory to **current** | Stays in the same directory; no change                       | `/home/user`             |
+| `cd /.`      | Change directory to **root’s current** | Changes directory to root `/` (since `.` in `/` is `/`)     | `/`                      |
+| `cd /`       | Change directory to **root**     | Same as above; changes to root `/`                           | `/`                      |
+| `mv ./ ../newplace/` | Move current folder to sibling folder | **Fails** because you can't move the directory you're in     | Error: "Device or resource busy" |
+| `cp ./ ../newplace/`  | Copy current folder to sibling folder | **Fails** unless `-r` flag used to recursively copy contents | Error without `-r`       |
+| `cp -r ./ ../newplace/` | Recursively copy current folder’s contents | Copies contents of current folder to target                   | Files copied             |
+| `../`        | Parent directory                 | Moves up one level in folder hierarchy                        | N/A                      |
+| `../../`     | Grandparent directory           | Moves up two levels                                           | N/A                      |
+
+---
+
+### Notes:
+
+- `.` refers to the **current directory**.
+- `..` refers to the **parent directory**.
+- Root directory `/` has no parent; thus `/..` resolves to `/`.
+- `mv` cannot move a directory you are currently inside.
+- `cp` requires `-r` to copy directories recursively.
+#
+#_____________________________________________________
