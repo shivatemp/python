@@ -1,0 +1,1 @@
+For detailed deep dive, "git-github-setup-detailed-guide.pdf in D drive".
