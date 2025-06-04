@@ -92,6 +92,7 @@ def operation(m, n):
 side_effect()
 '''
 
+'''
 x = int(input("x? "))
 y = int(input("y? "))
 
@@ -100,3 +101,61 @@ if x<y or x>y:
   
 else:
     print("x and y are equal.")
+
+'''
+'''
+x = int(input("x? "))
+y = int(input("y? "))
+
+#it can also be vice a versa
+if x != y:
+    print("x and y are not equal.")
+
+else:
+    print("x and y are equal.")
+'''
+
+'''
+x = int(input("what is the year? "))
+
+if x%100 == 0:
+    if x%400 == 0:
+        print("its leap")
+    else:
+        print("its not leap")
+elif x%100 != 0:
+    if x%4 == 0:
+        print("its leap")
+    else:
+        print("its not leap")
+'''
+
+'''
+x = int(input("what is the year? "))
+
+if x%100 == 0:
+    if x%400 == 0:
+        print("its leap")
+    else:
+        print("its not leap")
+else:
+    if x%4 == 0:
+        print("its leap")
+    else:
+        print("its not leap")
+'''
+
+'''
+#Better Version
+x = int(input("what is the year? "))
+
+if x%4 == 0:
+    if x%100 != 0:
+        print("its leap")
+    elif x%400 == 0:
+        print("its leap")
+    else:
+        print("its not leap")
+else:
+    print("its not leap")
+'''
