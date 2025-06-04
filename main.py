@@ -361,3 +361,50 @@ main()
 
 print(x)
 '''
+
+'''
+x = int(input("What's X? "))
+y = int(input("What's Y? "))
+
+if x>y:
+    print("x>y")
+
+if x<y:
+    print("x<y")
+
+if x==y:
+    print("x=y")
+
+'''
+
+'''
+#Control Flow
+x = int(input("What's X? "))
+y = int(input("What's Y? "))
+
+if x>y:
+    print("x>y")
+
+elif x<y:
+    print("x<y")
+
+elif x==y:
+    print("x=y")
+'''
+
+'''
+
+'''
+
+#Control Flow - even more
+x = int(input("What's X? "))
+y = int(input("What's Y? "))
+
+if x>y:
+    print("x>y")
+
+elif x<y:
+    print("x<y")
+
+else:
+    print("x=y")
