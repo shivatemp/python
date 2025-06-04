@@ -91,3 +91,12 @@ def operation(m, n):
 
 side_effect()
 '''
+
+x = int(input("x? "))
+y = int(input("y? "))
+
+if x<y or x>y:
+    print("x and y are not equal.")
+  
+else:
+    print("x and y are equal.")
