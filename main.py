@@ -411,3 +411,127 @@ else:
     print("x=y")
 '''
 
+'''
+grade = int(input("Grade? "))
+
+if grade >= 90 and grade <= 100:
+    print("A")
+
+elif grade >=80 and grade < 90:
+    print("B")
+
+elif grade >=70 and grade < 80:
+    print("C")
+
+elif grade >=60 and grade < 70:
+    print("D")
+
+else:
+    print("F")'''
+
+'''#Nesting and chaining operations
+grade = int(input("Grade? "))
+
+if 90 <= grade <= 100:
+    print("A")
+
+elif 80 <= grade < 90:
+    print("B")
+
+elif 70 <= grade < 80:
+    print("C")
+
+elif 60 <= grade < 70:
+    print("D")
+
+else:
+    print("F")'''
+
+'''# More concise - Just asking more questions
+grade = int(input("Grade? "))
+
+if 90 <= grade:
+    print("A")
+
+elif 80 <= grade:
+    print("B")
+
+elif 70 <= grade:
+    print("C")
+
+elif 60 <= grade:
+    print("D")
+
+else:
+    print("F")
+'''
+
+'''
+# yup logic faileure cause now all conditions run
+grade = int(input("Grade? "))
+
+if 90 <= grade:
+    print("A")
+
+if 80 <= grade:
+    print("B")
+
+if 70 <= grade:
+    print("C")
+
+if 60 <= grade:
+    print("D")
+
+if 0<= grade:
+    print("F")'''
+
+'''
+#Boolean check
+def main():
+    x = int(input("What's X? "))
+    if is_even(x):
+        print("Even")
+    else:
+        print ("Odd")
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+main()
+'''
+
+'''
+#Just checking if 2 return values can be passed while in a if else conditional.
+def main():
+    x = int(input("What's X? "))
+    if is_even(x) == "yup":
+        print("Even")
+    else:
+        print ("Odd")
+
+def is_even(n):
+    if n % 2 == 0:
+        return "yup"
+    else:
+        return "nope"
+
+main()
+'''
+
+'''
+#Yeah multiple inputs through if conditional work. Dope!!
+def main():
+    x = int(input("What's X? "))
+    print(is_even(x))
+
+def is_even(n):
+    if n % 2 == 0:
+        return "yup_even"
+    else:
+        return "nope_uneven"
+
+main()
+'''
