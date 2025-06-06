@@ -348,3 +348,62 @@ Both if and match are Python keywords, not functions — they are core control-f
 They parsed directly by Python, and cannot be used like objects or functions.
 '''
 
+'''
+print("So you get 2 alphabet and 2 numbers; a,b; 1,2.")
+print("")
+
+def main():
+
+        x = input("enter char---")
+        if not (x == "a" or x == "b"):
+            print("Yo you tryna be smart with chars...")
+            return None
+
+        y = input("enter num.---")
+        if not (y == "1" or y == "2"):
+            print("Yo you tryna be smart with numbers...")
+            return None
+
+        if x == "a" and y == "1":
+                print("Matched a1")
+
+        if x == "a" and y == "2":
+                print("matched a2")
+
+        if x == "b" and y == "1":
+                print("Matched b1")
+
+        if x == "b" and y == "2":
+                print("matched b2")
+
+main()
+'''
+
+'''
+#This also works but then, the code does not stoop even after detecting the falut... return only works inside a function.
+
+print("So you get 2 alphabet and 2 numbers; a,b; 1,2.")
+print("")
+
+x = input("enter char---")
+if not (x == "a" or x == "b"):
+    print("Yo you tryna be smart with chars...")
+            
+
+y = input("enter num.---")
+if not (y == "1" or y == "2"):
+    print("Yo you tryna be smart with numbers...")
+
+if x == "a" and y == "1":
+    print("Matched a1")
+
+if x == "a" and y == "2":
+    print("matched a2")
+
+if x == "b" and y == "1":
+    print("Matched b1")
+
+if x == "b" and y == "2":
+    print("matched b2")
+'''
+
