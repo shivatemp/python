@@ -295,3 +295,55 @@ def main():
 
 main()
 '''
+'''
+#Using Match control-flow keyword
+def main():
+    x = input("enter char: ")
+    y = input("enter num: ")
+
+    match x:
+        case "a":
+            match y:
+                case "1":
+                    print("Matched a1")
+                case "2":
+                    print("Matched a2")
+                case _:
+                    print("nothing matches yolo")
+        case "b":
+            match y:
+                case "1":
+                    print("b1")
+                case "2":
+                    print("b2")
+                case _:
+                    print("nothing matches yolo")
+        case _:
+            print("You dumb or something bro??")
+'''
+
+'''
+#Tuple Matching
+def main():
+    x = input("char? ")
+    y = input("num? ")
+
+    match (x, y):
+        case ("a", "1"):
+            print("a1")
+        case ("a", "2"):
+            print("a2")
+        case ("b", "1"):
+            print("b1")
+        case ("b", "2"):
+            print("b2")
+        case _:
+            print("nah bro, nothing matches yolo")
+
+main()
+'''
+
+'''
+Both if and match are Python keywords, not functions — they are core control-flow tools baked into the language syntax.
+They parsed directly by Python, and cannot be used like objects or functions.
+'''
