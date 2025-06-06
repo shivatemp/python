@@ -225,6 +225,17 @@ elif x == "d":
 else:
     print(0)
 '''
+
+'''
+#yup this is how 'and' function can give the value
+x1,x2,x3 = input("a or b or c or d only---- ").split(" ", maxsplit=-1)
+
+if x1 == "a" and x2 == "b" and x3 == "c":
+    print(1)
+else:
+    print(0)
+'''
+
 '''
 #Same thing using match function - we regressed
 
@@ -243,8 +254,8 @@ match x:
         print(0)
 '''
 
-'''
-#ok  just use'|' this instead of 'or'.
+
+#ok  just use'|' this instead of 'or' which cant be used here.
 
 x = input("a or b or c or d only---- ")
 
@@ -255,15 +266,3 @@ match x:
         print(2)
     case _:
         print(0)
-'''
-
-x = input("a or b or c or d only---- ")
-
-if x == "a" or x == "b" or x == "c":
-    print(1)
-
-elif x == "d":
-    print(2)
-
-else:
-    print(0)
