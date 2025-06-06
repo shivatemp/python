@@ -254,7 +254,7 @@ match x:
         print(0)
 '''
 
-
+'''
 #ok  just use'|' this instead of 'or' which cant be used here.
 
 x = input("a or b or c or d only---- ")
@@ -266,3 +266,4 @@ match x:
         print(2)
     case _:
         print(0)
+'''
