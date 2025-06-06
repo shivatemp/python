@@ -225,4 +225,45 @@ elif x == "d":
 else:
     print(0)
 '''
+'''
+#Same thing using match function - we regressed
 
+x = input("a or b or c or d only---- ")
+
+match x:
+    case "a":
+        print(1)
+    case "b":
+        print(1)
+    case "c":
+        print(1)
+    case "d":
+        print(2)
+    case _:
+        print(0)
+'''
+
+'''
+#ok  just use'|' this instead of 'or'.
+
+x = input("a or b or c or d only---- ")
+
+match x:
+    case "a" | "b" | "c":
+        print(1)
+    case "d":
+        print(2)
+    case _:
+        print(0)
+'''
+
+x = input("a or b or c or d only---- ")
+
+if x == "a" or x == "b" or x == "c":
+    print(1)
+
+elif x == "d":
+    print(2)
+
+else:
+    print(0)
