@@ -339,7 +339,7 @@ print("Here 'or' expects A = 1 \"OR\" B = 2.")
 
 def fuor(a, b):
     
-    if a == 1 and b == 2:
+    if a == 1 or b == 2:
       print("_________")
       print("---TRUE---")
       print(f"Received Value = Expected Value; ({a},{b}) = (1,2)")
@@ -368,7 +368,7 @@ fuor(3,2)
 
 print("")
 print("TEST:-4 -- A = 3, B = 3")
-fuor(3,2)
+fuor(3,3)
 
 print("")
 print("Therefore, The 'or' keyword just expects the any one value to be exact, for the all the required parameters.")
