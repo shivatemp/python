@@ -6,3 +6,5 @@ git status
 git add . && git commit -m "Update" && git push
 
 git status
+
+git add . && git commit -m "done" && git push && echo "------DONE-------" && git pull && git status && echo "-----YOLO-----"
