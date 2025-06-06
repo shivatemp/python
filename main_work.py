@@ -267,3 +267,31 @@ match x:
     case _:
         print(0)
 '''
+
+'''
+print("So you get 2 alphabet and 2 numbers; a,b; 1,2.")
+print("")
+
+def main():
+        x = input("enter char---")
+        y = input("enter num.---")
+
+        if x == "a":
+            if y == "1":
+                print("Matched a1")
+            elif y == "2":
+                print("matched a2")
+            else:
+                print("nothing matches yolo")
+        elif x == "b":
+            if y == "1":
+                print("b1")
+            elif y == "2":
+                print("b2")
+            else:
+                print("nothing matches yolo")
+        else:
+            print("You dumb or something bro??")
+
+main()
+'''
